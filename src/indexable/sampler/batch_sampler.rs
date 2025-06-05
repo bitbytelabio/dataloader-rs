@@ -45,7 +45,7 @@ impl<S: Sampler> Len for BatchSampler<S> {
         if self.drop_last {
             self.sampler.len() / self.batch_size
         } else {
-            (self.sampler.len() + self.batch_size - 1) / self.batch_size
+            self.sampler.len().div_ceil(self.batch_size)
         }
     }
 }
@@ -110,7 +110,7 @@ where
         let lower = if self.drop_last {
             lower / self.batch_size
         } else {
-            (lower + self.batch_size - 1) / self.batch_size
+            lower.div_ceil(self.batch_size)
         };
         (lower, Some(lower))
     }

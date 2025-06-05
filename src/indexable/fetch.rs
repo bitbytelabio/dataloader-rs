@@ -39,7 +39,7 @@ where
     pub(crate) collate_fn: &'dataset C,
 }
 
-impl<'dataset, D, C> Fetcher<D, C> for MapDatasetFetcher<'dataset, D, C>
+impl<D, C> Fetcher<D, C> for MapDatasetFetcher<'_, D, C>
 where
     D: Dataset + Sync,
     C: Collate<D::Sample>,

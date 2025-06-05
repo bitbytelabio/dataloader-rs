@@ -6,7 +6,7 @@ use std::num::{
     NonZeroU16, NonZeroU32, NonZeroU64, NonZeroU128, NonZeroUsize,
 };
 
-/// Maybe this one may not be supported by a tensor running on a GPU.
+// Maybe this one may not be supported by a tensor running on a GPU.
 
 macro_rules! nonzero_impl {
     ($($t:ty)*) => {

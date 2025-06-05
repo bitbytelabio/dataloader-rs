@@ -100,7 +100,7 @@ where
         let lower = if self.drop_last {
             lower / self.batch_size
         } else {
-            (lower + self.batch_size - 1) / self.batch_size
+            lower.div_ceil(self.batch_size)
         };
         (lower, Some(lower))
     }
@@ -163,7 +163,7 @@ where
     }
 }
 
-impl<'dataset, D, C> Iterator for Iter<'dataset, D, C>
+impl<D, C> Iterator for Iter<'_, D, C>
 where
     D: Iterator,
     C: Collate<D::Item>,

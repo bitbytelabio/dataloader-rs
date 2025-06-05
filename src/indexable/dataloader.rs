@@ -86,7 +86,7 @@ where
     data_fetcher: MapDatasetFetcher<'dataset, D, C>,
 }
 
-impl<'dataset, D, S, C> SingleProcessDataLoaderIter<'dataset, D, S, C>
+impl<D, S, C> SingleProcessDataLoaderIter<'_, D, S, C>
 where
     D: Dataset + Sync,
     S: Sampler,
@@ -116,7 +116,7 @@ where
     }
 }
 
-impl<'dataset, D, S, C> Iterator for SingleProcessDataLoaderIter<'dataset, D, S, C>
+impl<D, S, C> Iterator for SingleProcessDataLoaderIter<'_, D, S, C>
 where
     D: Dataset + Sync,
     S: Sampler,
@@ -154,7 +154,7 @@ where
     }
 }
 
-impl<'dataset, D, S, C> ExactSizeIterator for SingleProcessDataLoaderIter<'dataset, D, S, C>
+impl<D, S, C> ExactSizeIterator for SingleProcessDataLoaderIter<'_, D, S, C>
 where
     D: Dataset + Sync,
     S: Sampler,

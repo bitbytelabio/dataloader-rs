@@ -40,7 +40,7 @@ impl GetSample for RandomUnique {
 
 fn iter_all_dataset(loader: &DataLoader<RandomUnique>) -> usize {
     let mut num_sample = 0;
-    for (_sample, label) in loader.iter() {
+    for (_sample, label) in loader {
         num_sample += label.len();
     }
     num_sample
