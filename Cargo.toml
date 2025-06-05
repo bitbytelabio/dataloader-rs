@@ -1,6 +1,6 @@
 [package]
 name = "dataloader-rs"
-version = "0.6.2"
+version = "0.6.3"
 authors = [
     "Tudy Gourmelen <gourmelentudy@gmail.com>",
     "Dat Nguyen <dat.nguyen@bitbytelab.io>",
