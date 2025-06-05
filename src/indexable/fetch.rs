@@ -1,6 +1,6 @@
 use crate::{
-    collate::{Collate, DefaultCollate},
     Dataset,
+    collate::{Collate, DefaultCollate},
 };
 
 #[cfg(feature = "rayon")]

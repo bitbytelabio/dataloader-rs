@@ -72,7 +72,7 @@ pub mod collate;
 pub mod indexable;
 pub mod iterable;
 
-pub use indexable::{sampler, Dataset, GetSample, Len, NdarrayDataset};
+pub use indexable::{Dataset, GetSample, Len, NdarrayDataset, sampler};
 
 #[cfg(feature = "rayon")]
 use once_cell::sync::OnceCell;

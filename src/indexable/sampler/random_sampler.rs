@@ -1,5 +1,5 @@
+use rand::rng;
 use rand::seq::SliceRandom;
-use rand::thread_rng;
 
 use super::{Len, Sampler};
 
@@ -56,7 +56,7 @@ impl RandomSamplerIter {
             todo!()
         } else {
             let mut vec: Vec<usize> = (0..data_source_len).collect();
-            vec.shuffle(&mut thread_rng());
+            vec.shuffle(&mut rng());
             Self {
                 indexes: vec,
                 idx: 0,

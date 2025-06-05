@@ -1,9 +1,9 @@
-use ai_dataloader::indexable::DataLoader;
-use ai_dataloader::{Dataset, GetSample, Len};
-use criterion::{criterion_group, criterion_main, Criterion, Throughput};
+use criterion::{Criterion, Throughput, criterion_group, criterion_main};
+use dataloader::indexable::DataLoader;
+use dataloader::{Dataset, GetSample, Len};
 use ndarray::Array3;
-use ndarray_rand::rand_distr::Uniform;
 use ndarray_rand::RandomExt;
+use ndarray_rand::rand_distr::Uniform;
 
 const NUM_CLASS: usize = 20;
 const IMAGE_SIZE: usize = 50;

@@ -1,7 +1,7 @@
 use crate::{
+    Dataset,
     collate::{Collate, DefaultCollate},
     sampler::{BatchSampler, RandomSampler, Sampler, SequentialSampler},
-    Dataset,
 };
 
 #[cfg(feature = "rayon")]

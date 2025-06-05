@@ -1,6 +1,6 @@
 use super::super::Collate;
 use super::TorchCollate;
-use ndarray::{stack, Array, ArrayBase, ArrayView, Axis, Dimension, RemoveAxis};
+use ndarray::{Array, ArrayBase, ArrayView, Axis, Dimension, RemoveAxis, stack};
 use tch::Tensor;
 
 impl<A, D> Collate<Array<A, D>> for TorchCollate

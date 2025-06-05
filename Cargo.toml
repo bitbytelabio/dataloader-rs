@@ -1,8 +1,11 @@
 [package]
-name = "ai-dataloader"
+name = "dataloader-rs"
 version = "0.6.2"
-authors = ["Tudy Gourmelen <gourmelentudy@gmail.com>"]
-edition = "2021"
+authors = [
+    "Tudy Gourmelen <gourmelentudy@gmail.com>",
+    "Dat Nguyen <dat.nguyen@bitbytelab.io>",
+]
+edition = "2024"
 description = "Rust implementation to the PyTorch DataLoader"
 readme = "README.md"
 repository = "https://github.com/Tudyx/ai-dataloader"
@@ -10,9 +13,9 @@ documentation = "https://docs.rs/ai-dataloader/"
 license = "MIT OR Apache-2.0"
 keywords = ["dataloader", "pytorch", "tensorflow", "AI", "machine_learning"]
 categories = ["science"]
-rust-version = "1.63"
 
 [lib]
+name = "dataloader"
 bench = false
 
 [package.metadata.docs.rs]
@@ -27,20 +30,20 @@ default = ["rayon"]
 rayon = ["dep:rayon", "dep:once_cell"]
 
 [dependencies]
-ndarray = { version = "0.15.4", features = ["serde"] }
-ndarray-rand = "0.14.0"
-itertools = "0.13.0"
-rand = "0.8.5"
-tch = { version = "0.18.0", optional = true, features = ["download-libtorch"] }
+ndarray = { version = "0.16.1", features = ["serde"] }
+ndarray-rand = "0.15.0"
+itertools = "0.14.0"
+rand = "0.9.1"
+tch = { version = "0.20.0", optional = true, features = ["download-libtorch"] }
 rayon = { version = "1.7.0", optional = true }
 once_cell = { version = "1.17.1", optional = true }
 
 
 [dev-dependencies]
-criterion = { version = "0.5.1", features = ["html_reports"] }
+criterion = { version = "0.6.0", features = ["html_reports"] }
 csv = "1.1.6"
-image = "0.25.1"
-nshare = { version = "0.9.0", features = ["ndarray", "image"] }
+image = "0.25.6"
+nshare = { version = "0.10.0", features = ["ndarray", "image"] }
 
 [[example]]
 name = "iterable"

@@ -5,7 +5,7 @@
 
 mod builder;
 use builder::Builder;
-use rand::{seq::SliceRandom, thread_rng};
+use rand::{rng, seq::SliceRandom};
 
 use crate::collate::{Collate, DefaultCollate};
 
@@ -89,7 +89,7 @@ where
 
         if batch.len() == self.batch_size || (batch.len() != self.batch_size && !self.drop_last) {
             if self.shuffle {
-                batch.shuffle(&mut thread_rng());
+                batch.shuffle(&mut rng());
             }
             return Some(self.collate_fn.collate(batch));
         }
@@ -152,7 +152,7 @@ where
 {
     /// Iterate over the dataloader without consuming the underlying dataset.
     /// As it make no sens to collate reference into a tensor, by default element are copied.
-    pub fn iter(&'dataset self) -> Iter<'_, <&'dataset D as IntoIterator>::IntoIter, C> {
+    pub fn iter(&'dataset self) -> Iter<'dataset, <&'dataset D as IntoIterator>::IntoIter, C> {
         Iter {
             batch_size: self.batch_size,
             dataset_iter: self.dataset.into_iter(),
@@ -182,7 +182,7 @@ where
 
         if batch.len() == self.batch_size || (batch.len() != self.batch_size && !self.drop_last) {
             if self.shuffle {
-                batch.shuffle(&mut thread_rng());
+                batch.shuffle(&mut rng());
             }
             return Some(self.collate_fn.collate(batch));
         }

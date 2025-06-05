@@ -1,6 +1,6 @@
 use super::super::Collate;
 use super::DefaultCollate;
-use ndarray::{stack, Array, ArrayBase, ArrayView, Axis, Dimension, RemoveAxis};
+use ndarray::{Array, ArrayBase, ArrayView, Axis, Dimension, RemoveAxis, stack};
 
 impl<A, D> Collate<Array<A, D>> for DefaultCollate
 where

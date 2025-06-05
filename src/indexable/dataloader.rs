@@ -2,9 +2,9 @@
 
 use super::fetch::{Fetcher, MapDatasetFetcher};
 use crate::{
+    Dataset, Len,
     collate::{Collate, DefaultCollate},
     sampler::{BatchIterator, BatchSampler, Sampler, SequentialSampler},
-    Dataset, Len,
 };
 
 mod builder;
@@ -167,14 +167,14 @@ where
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::Len;
+    use crate::NdarrayDataset;
     use crate::collate::NoOpCollate;
     use crate::sampler::RandomSampler;
     use crate::sampler::SequentialSampler;
-    use crate::Len;
-    use crate::NdarrayDataset;
-    use ndarray::{arr0, array, Array, Array1, Array4, Axis, Ix1, Ix4, Slice};
-    use ndarray_rand::rand_distr::{Normal, Uniform};
+    use ndarray::{Array, Array1, Array4, Axis, Ix1, Ix4, Slice, arr0, array};
     use ndarray_rand::RandomExt;
+    use ndarray_rand::rand_distr::{Normal, Uniform};
     use std::collections::HashMap;
 
     #[test]

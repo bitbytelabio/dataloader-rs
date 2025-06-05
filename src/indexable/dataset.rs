@@ -38,6 +38,7 @@ pub trait Dataset: Len + GetSample {}
 
 /// Dataset could become something like that when functor trait will be available.
 #[doc(hidden)]
+#[allow(dead_code)]
 trait FunctorDataset<F>: Len + GetSample
 where
     F: Fn(Vec<Self::Sample>) -> Self::CollateOutput,

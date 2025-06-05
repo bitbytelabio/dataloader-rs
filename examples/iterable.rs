@@ -1,4 +1,4 @@
-use ai_dataloader::iterable::DataLoader;
+use dataloader::iterable::DataLoader;
 
 #[cfg(not(feature = "tch"))]
 fn main() {
@@ -19,7 +19,7 @@ fn main() {
 }
 
 #[cfg(feature = "tch")]
-use ai_dataloader::collate::TorchCollate;
+use dataloader::collate::TorchCollate;
 
 #[cfg(feature = "tch")]
 fn main() {
